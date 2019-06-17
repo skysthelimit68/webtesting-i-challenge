@@ -9,7 +9,7 @@ describe('enhancer.js', () => {
             expect(repair({ durability: 89}).durability).toBe(100);
             expect(repair({ durability: -89}).durability).toBe(100);
             expect(repair({ durability: 100}).durability).toBe(100);
-            expect(repair({ durability: 0})).toEqual({durability : 100});
+            expect(repair({ durability: 0}).durability).toBe(100);
 
         })
     })
@@ -19,7 +19,7 @@ describe('enhancer.js', () => {
         it('increment enhancement to up to 20', () => {
             expect(succeed({enhancement : 20}).enhancement).toBe(20);
             expect(succeed({enhancement : 12}).enhancement).toBe(13);
-            expect(succeed({enhancement : -3}).enhancement).toBe(1);
+            expect(succeed({enhancement : -1}).enhancement).toBe(1);
             expect(succeed({enhancement : 128}).enhancement).toBe(20);
         })
     })
