@@ -39,7 +39,7 @@ function get(item) {
 }
 
 function preventOutOfBound(item) {
-
+  //test for valid number, reset to 0 if NaN, then test for boundry
   const newEnhance = isNaN(item.enhancement) ? 0 : item.enhancement < 0 ? 0 : item.enhancement > 20 ? 20 : item.enhancement
   const newDura = isNaN(item.durability) ? 0 : item.durability < 0 ? 0 : item.durability > 100 ? 100 : item.durability
   return {...item, enhancement : newEnhance, durability : newDura};
